@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: kick-halay-overlay
+    runtime: node
+    plan: free
+    branch: main
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+    # Health check path (optional but useful)
+    healthCheckPath: /health
